@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한상혁 | 퀀트 운용역</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* 배경 그리드 효과 */
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* 프로젝트 카드 호버 효과 */
+        .project-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+        }
+
+        /* 스크롤 애니메이션 */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 부드러운 스크롤 */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 모바일 메뉴 */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .mobile-menu.open {
+            max-height: 400px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-slate-950/95 backdrop-blur border-b border-slate-800">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent font-mono">SH</a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="#about" class="text-slate-300 hover:text-emerald-400 transition">소개</a>
+                <a href="#tech" class="text-slate-300 hover:text-emerald-400 transition">기술 스택</a>
+                <a href="#projects" class="text-slate-300 hover:text-emerald-400 transition">프로젝트</a>
+                <a href="#contact" class="text-slate-300 hover:text-emerald-400 transition">연락처</a>
+                <a href="#contact" class="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 rounded-lg transition font-medium">연락하기</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="md:hidden text-slate-300 hover:text-emerald-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-900 border-t border-slate-800">
+            <div class="px-6 py-4 flex flex-col gap-4">
+                <a href="#about" class="text-slate-300 hover:text-emerald-400 transition">소개</a>
+                <a href="#tech" class="text-slate-300 hover:text-emerald-400 transition">기술 스택</a>
+                <a href="#projects" class="text-slate-300 hover:text-emerald-400 transition">프로젝트</a>
+                <a href="#contact" class="text-slate-300 hover:text-emerald-400 transition">연락처</a>
+                <a href="#contact" class="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 rounded-lg transition font-medium text-center">연락하기</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="grid-bg min-h-screen flex items-center justify-center px-6 py-20">
+        <div class="max-w-3xl mx-auto text-center fade-in">
+            <p class="text-emerald-400 font-mono text-sm mb-4">안녕하세요! 저는</p>
+            <h1 class="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">한상혁</h1>
+            <p class="text-2xl md:text-3xl text-slate-300 mb-4">퀀트 운용역 <span class="text-emerald-400">·</span> Junior Quant</p>
+            <p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">체계적인 트레이딩 전략과 데이터 기반의 리스크 관리를 통해 시장의 기회를 포착합니다. 지금 제 포트폴리오를 둘러보세요.</p>
+
+            <div class="flex gap-4 justify-center flex-wrap">
+                <a href="#projects" class="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 rounded-lg font-medium transition transform hover:scale-105">프로젝트 보기</a>
+                <a href="#contact" class="px-8 py-3 border border-slate-600 hover:border-emerald-400 rounded-lg font-medium transition">연락하기</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-4xl mx-auto px-6 py-20">
+        <h2 class="text-4xl font-bold mb-12 text-emerald-400">소개</h2>
+
+        <div class="space-y-6 text-slate-300 text-lg leading-relaxed">
+            <p>안녕하세요. 저는 정량적 투자 전략 개발과 리스크 관리에 열정을 가진 주니어 퀀트입니다. 시장의 복잡한 패턴 속에서 신호를 찾아내고, 이를 체계적인 백테스팅과 리스크 관리로 검증하는 과정에서 특별한 흥미를 느낍니다.</p>
+
+            <p>저는 Python과 통계적 기법을 활용하여 다양한 자산 클래스(주식, 선물, 옵션)를 대상으로 수익 창출 전략을 연구하고 있습니다. 특히 모멘텀, 통계적 차익거래, 변동성 기반 전략 등 여러 방향의 연구를 진행 중이며, 각 전략의 샤프비율, 드로우다운, 수익률 등을 종합적으로 평가하여 포트폴리오에 편입합니다.</p>
+
+            <p>끊임없이 배우고 개선하는 것을 중시합니다. 새로운 기술 스택을 습득하고, 시장 데이터를 깊이 있게 분석하며, 동료들과의 협업을 통해 더욱 정교한 전략을 만들어가고자 합니다.</p>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech" class="max-w-4xl mx-auto px-6 py-20">
+        <h2 class="text-4xl font-bold mb-12 text-emerald-400">기술 스택</h2>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Languages & Analysis -->
+            <div>
+                <h3 class="text-xl font-bold text-slate-200 mb-4 flex items-center gap-2">
+                    <span class="w-1 h-6 bg-emerald-400"></span>
+                    언어 & 분석
+                </h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-mono text-emerald-300 border border-slate-700">Python</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-mono text-emerald-300 border border-slate-700">SQL</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-mono text-emerald-300 border border-slate-700">R</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-mono text-emerald-300 border border-slate-700">JavaScript</span>
+                </div>
+            </div>
+
+            <!-- Data & Libraries -->
+            <div>
+                <h3 class="text-xl font-bold text-slate-200 mb-4 flex items-center gap-2">
+                    <span class="w-1 h-6 bg-emerald-400"></span>
+                    데이터 & 라이브러리
+                </h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-mono text-teal-300 border border-slate-700">Pandas</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-mono text-teal-300 border border-slate-700">NumPy</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-mono text-teal-300 border border-slate-700">scikit-learn</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-mono text-teal-300 border border-slate-700">Statsmodels</span>
+                </div>
+            </div>
+
+            <!-- Backtesting & Trading -->
+            <div>
+                <h3 class="text-xl font-bold text-slate-200 mb-4 flex items-center gap-2">
+                    <span class="w-1 h-6 bg-emerald-400"></span>
+                    백테스팅 & 트레이딩
+                </h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-mono text-cyan-300 border border-slate-700">Backtrader</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-mono text-cyan-300 border border-slate-700">QuantLib</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-mono text-cyan-300 border border-slate-700">Custom Framework</span>
+                </div>
+            </div>
+
+            <!-- Infrastructure & Tools -->
+            <div>
+                <h3 class="text-xl font-bold text-slate-200 mb-4 flex items-center gap-2">
+                    <span class="w-1 h-6 bg-emerald-400"></span>
+                    인프라 & 도구
+                </h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-mono text-violet-300 border border-slate-700">Git</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-mono text-violet-300 border border-slate-700">Jupyter</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-mono text-violet-300 border border-slate-700">AWS</span>
+                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm font-mono text-violet-300 border border-slate-700">Docker</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
+        <h2 class="text-4xl font-bold mb-16 text-emerald-400">프로젝트</h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Project 1: Momentum Sharpe -->
+            <a href="projects/momentum-sharpe.html" class="group">
+                <div class="project-card bg-slate-900 rounded-xl overflow-hidden border border-slate-800 hover:border-emerald-500 h-full">
+                    <div class="h-40 bg-gradient-to-br from-emerald-900 to-teal-900 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-10 grid-bg"></div>
+                        <span class="text-5xl font-bold text-emerald-400/30">📊</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">샤프비율을 활용한 모멘텀 전략</h3>
+                        <p class="text-slate-400 text-sm mb-4">신호 기반 자산 선정과 동적 포지션 사이징</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-800 rounded text-xs text-emerald-300 font-mono">Python</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded text-xs text-emerald-300 font-mono">Backtest</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded text-xs text-emerald-300 font-mono">Statistics</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 2: VXX Term Structure -->
+            <a href="projects/vxx-term-structure.html" class="group">
+                <div class="project-card bg-slate-900 rounded-xl overflow-hidden border border-slate-800 hover:border-emerald-500 h-full">
+                    <div class="h-40 bg-gradient-to-br from-cyan-900 to-blue-900 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-10 grid-bg"></div>
+                        <span class="text-5xl font-bold text-cyan-400/30">📈</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">선물기간구조를 활용한 VXX 트레이딩 전략</h3>
+                        <p class="text-slate-400 text-sm mb-4">변동성 지표와 구조 기반의 방향성 거래</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-800 rounded text-xs text-cyan-300 font-mono">Python</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded text-xs text-cyan-300 font-mono">Futures</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded text-xs text-cyan-300 font-mono">Volatility</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 3: Custom Framework -->
+            <a href="projects/custom-framework.html" class="group">
+                <div class="project-card bg-slate-900 rounded-xl overflow-hidden border border-slate-800 hover:border-emerald-500 h-full">
+                    <div class="h-40 bg-gradient-to-br from-violet-900 to-indigo-900 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-10 grid-bg"></div>
+                        <span class="text-5xl font-bold text-violet-400/30">⚙️</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">Custom 알고리즘 Framework</h3>
+                        <p class="text-slate-400 text-sm mb-4">신호-포지션-리스크관리의 모듈식 구조</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-800 rounded text-xs text-violet-300 font-mono">Architecture</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded text-xs text-violet-300 font-mono">Framework</span>
+                            <span class="px-3 py-1 bg-slate-800 rounded text-xs text-violet-300 font-mono">OOP</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-4xl mx-auto px-6 py-20">
+        <h2 class="text-4xl font-bold mb-12 text-emerald-400">연락처</h2>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-12">
+            <p class="text-slate-300 text-lg mb-8">저와 연락을 원하신가요? 아래 정보를 통해 언제든 연락주세요. 모든 메시지에 성실하게 답변하겠습니다.</p>
+
+            <div class="space-y-6">
+                <!-- Email -->
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                        <span class="text-xl">✉️</span>
+                    </div>
+                    <div>
+                        <p class="text-slate-200 font-medium mb-1">이메일</p>
+                        <a href="mailto:sanghyuk292323@gmail.com" class="text-emerald-400 hover:text-emerald-300 transition font-mono text-sm md:text-base">sanghyuk292323@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                        <span class="text-xl">📱</span>
+                    </div>
+                    <div>
+                        <p class="text-slate-200 font-medium mb-1">전화</p>
+                        <a href="tel:01012341234" class="text-emerald-400 hover:text-emerald-300 transition font-mono text-sm md:text-base">010-1234-1234</a>
+                    </div>
+                </div>
+
+                <!-- Social Links (Placeholder) -->
+                <div class="flex items-start gap-4 pt-4">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                        <span class="text-xl">🔗</span>
+                    </div>
+                    <div>
+                        <p class="text-slate-200 font-medium mb-3">기타 링크</p>
+                        <div class="flex gap-4 flex-wrap">
+                            <a href="#" class="text-slate-400 hover:text-emerald-400 transition text-sm">GitHub</a>
+                            <a href="#" class="text-slate-400 hover:text-emerald-400 transition text-sm">LinkedIn</a>
+                            <a href="#" class="text-slate-400 hover:text-emerald-400 transition text-sm">Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 mt-20 py-8 px-6">
+        <div class="max-w-6xl mx-auto text-center text-slate-400 text-sm">
+            <p>© 2024 한상혁. All rights reserved.</p>
+            <p class="mt-2">Quant Trader | Junior Analyst</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

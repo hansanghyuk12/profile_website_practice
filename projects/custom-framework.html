@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom 알고리즘 Framework | 한상혁</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-slate-950/95 backdrop-blur border-b border-slate-800">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent font-mono">SH</a>
+            <a href="../index.html" class="text-slate-300 hover:text-emerald-400 transition font-mono text-sm">← 프로필로 돌아가기</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 py-20">
+        <!-- Back Button -->
+        <a href="../index.html" class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition mb-12 font-mono text-sm">
+            <span>←</span> 프로필로 돌아가기
+        </a>
+
+        <!-- Project Header -->
+        <div class="mb-16">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-4xl">⚙️</span>
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-2">Custom 알고리즘 Framework</h1>
+                    <p class="text-slate-400">2023년 - 현재 | 개인 프로젝트</p>
+                </div>
+            </div>
+
+            <!-- Meta Information -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8 bg-slate-900 rounded-lg p-6 border border-slate-800">
+                <div>
+                    <p class="text-slate-400 text-sm mb-2">역할</p>
+                    <p class="text-slate-200 font-medium">아키텍처 설계, 코드 개발, 테스트</p>
+                </div>
+                <div>
+                    <p class="text-slate-400 text-sm mb-2">주요 기술</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 rounded text-xs text-violet-300 font-mono">Python</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded text-xs text-violet-300 font-mono">OOP</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded text-xs text-violet-300 font-mono">Git</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded text-xs text-violet-300 font-mono">Testing</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid md:grid-cols-4 gap-4">
+                <div class="bg-violet-500/10 border border-violet-500/30 rounded-lg p-4">
+                    <p class="text-violet-400 font-mono text-sm">Framework Status</p>
+                    <p class="text-xl font-bold text-violet-300 mt-2">v1.2.0</p>
+                </div>
+                <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+                    <p class="text-purple-400 font-mono text-sm">Code Lines</p>
+                    <p class="text-2xl font-bold text-purple-300 mt-2">4.2K</p>
+                </div>
+                <div class="bg-indigo-500/10 border border-indigo-500/30 rounded-lg p-4">
+                    <p class="text-indigo-400 font-mono text-sm">Test Coverage</p>
+                    <p class="text-2xl font-bold text-indigo-300 mt-2">87%</p>
+                </div>
+                <div class="bg-fuchsia-500/10 border border-fuchsia-500/30 rounded-lg p-4">
+                    <p class="text-fuchsia-400 font-mono text-sm">Strategies</p>
+                    <p class="text-2xl font-bold text-fuchsia-300 mt-2">5개</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="space-y-16">
+            <!-- Overview -->
+            <section>
+                <h2 class="text-2xl font-bold text-emerald-400 mb-6">개요</h2>
+                <div class="space-y-4 text-slate-300 leading-relaxed">
+                    <p>본 프로젝트는 여러 트레이딩 전략을 일관되게 개발, 백테스트, 배포할 수 있는 모듈식 프레임워크입니다. 신호 생성, 포지션 관리, 리스크 관리 등 핵심 기능을 플러그인 아키텍처로 구현했으므로, 새로운 전략 추가 시 기존 코드의 수정을 최소화하면서도 재사용 가능한 구조를 유지합니다.</p>
+                    <p>이 프레임워크를 통해 모멘텀, 평균 회귀, 변동성 거래 등 다양한 전략을 동일한 백테스팅 환경에서 테스트할 수 있으며, 성과 지표를 일관되게 계산하고 비교할 수 있습니다. 또한 향후 실시간 거래로의 전환도 용이하도록 설계되었습니다.</p>
+                </div>
+            </section>
+
+            <!-- Problem Definition -->
+            <section>
+                <h2 class="text-2xl font-bold text-emerald-400 mb-6">문제 정의</h2>
+                <div class="space-y-4 text-slate-300 leading-relaxed">
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                        <h3 class="font-mono text-sm text-violet-300 mb-3">Challenge 1: 전략별 일관된 백테스팅</h3>
+                        <p>매 전략마다 독립적인 스크립트를 작성하면 인디케이터 계산, 데이터 처리, 성과 평가 로직이 중복되고, 실수가 발생하기 쉬웠습니다. 또한 전략 간 공정한 비교가 어려웠습니다.</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                        <h3 class="font-mono text-sm text-purple-300 mb-3">Challenge 2: 포지션 관리의 복잡성</h3>
+                        <p>여러 자산 간 포지션을 동시에 관리하고, 포트폴리오 규제(최대 포지션 수, 최대 노출도 등)를 적용하는 로직이 복잡했습니다. 이를 일관되게 처리할 수 있는 통합 시스템이 필요했습니다.</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                        <h3 class="font-mono text-sm text-indigo-300 mb-3">Challenge 3: 성과 분석의 자동화</h3>
+                        <p>각 거래 후 손익, 누적 수익, 드로우다운, 샤프비율 등을 매번 수작업으로 계산하는 것은 비효율적이고 오류가 발생하기 쉬웠습니다.</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                        <h3 class="font-mono text-sm text-fuchsia-300 mb-3">Challenge 4: 전략 간 코드 중복</h3>
+                        <p>비슷한 기능을 여러 전략에서 반복 구현하게 되어, 버그 수정이나 성능 개선 시 모든 파일을 수정해야 했습니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Methodology -->
+            <section>
+                <h2 class="text-2xl font-bold text-emerald-400 mb-6">아키텍처 & 접근 방법</h2>
+                <div class="space-y-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                        <h3 class="font-bold text-slate-100 mb-4">🏗️ 핵심 아키텍처 (모듈식 구조)</h3>
+                        <div class="space-y-3 text-slate-300">
+                            <div>
+                                <p class="font-mono text-sm text-violet-300 mb-1">1. SignalGenerator</p>
+                                <p class="text-sm">추상 기본 클래스로 모든 신호 생성 로직을 정의. 매 자산마다 신호(Buy/Sell/Hold)를 출력합니다.</p>
+                            </div>
+                            <div>
+                                <p class="font-mono text-sm text-purple-300 mb-1">2. PositionManager</p>
+                                <p class="text-sm">신호를 받아 실제 거래 신호로 변환. 포트폴리오 규제, 포지션 크기 제한 등을 적용합니다.</p>
+                            </div>
+                            <div>
+                                <p class="font-mono text-sm text-indigo-300 mb-1">3. RiskManager</p>
+                                <p class="text-sm">손절매, 익절매, 포트폴리오 레벨의 위험 제한을 관리합니다.</p>
+                            </div>
+                            <div>
+                                <p class="font-mono text-sm text-fuchsia-300 mb-1">4. PerformanceAnalyzer</p>
+                                <p class="text-sm">거래 결과를 수집하여 수익률, 샤프비율, 드로우다운, 윈율 등 모든 성과 지표를 자동 계산합니다.</p>
+                            </div>
+                            <div>
+                                <p class="font-mono text-sm text-cyan-300 mb-1">5. Backtest Engine</p>
+                                <p class="text-sm">위의 모든 컴포넌트를 오케스트레이션하여 일관된 백테스트 환경을 제공합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                        <h3 class="font-bold text-slate-100 mb-3 flex items-center gap-2">
+                            <span class="text-violet-400">①</span> 신호 생성 인터페이스
+                        </h3>
+                        <p class="text-slate-300 mb-3">모든 전략은 SignalGenerator 기본 클래스를 상속받아 generate() 메서드를 구현합니다:</p>
+                        <div class="bg-slate-800 rounded p-4 font-mono text-xs text-violet-300 overflow-x-auto">
+class MomentumStrategy(SignalGenerator):
+    def generate(self, data, lookback=20):
+        momentum = data['close'].pct_change(lookback)
+        return 1 if momentum &gt; 0 else -1 if momentum &lt; 0 else 0
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                        <h3 class="font-bold text-slate-100 mb-3 flex items-center gap-2">
+                            <span class="text-violet-400">②</span> 통합 포지션 관리
+                        </h3>
+                        <p class="text-slate-300 mb-3">모든 자산의 포지션 상태를 중앙에서 추적하고, 거래 전에 규제를 검사합니다:</p>
+                        <ul class="list-disc list-inside space-y-1 text-slate-300 ml-4">
+                            <li>최대 동시 포지션 수 제한</li>
+                            <li>각 자산별 최대 포지션 크기 제한</li>
+                            <li>포트폴리오 전체 노출도 제한</li>
+                            <li>상관관계 기반 다양화 강화</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                        <h3 class="font-bold text-slate-100 mb-3 flex items-center gap-2">
+                            <span class="text-violet-400">③</span> 자동 성과 분석
+                        </h3>
+                        <p class="text-slate-300 mb-3">백테스트 완료 후 PerformanceAnalyzer가 다음을 자동으로 계산합니다:</p>
+                        <div class="bg-slate-800 rounded p-4 font-mono text-xs text-violet-300 overflow-x-auto">
+metrics = analyzer.compute_metrics()
+# 수익률, 샤프비율, 최대낙폭, 윈율, 프로핏팩터 등
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation -->
+            <section>
+                <h2 class="text-2xl font-bold text-emerald-400 mb-6">구현 현황</h2>
+                <div class="space-y-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                        <h3 class="font-bold text-slate-100 mb-4">통합된 전략들</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-3">
+                                <span class="text-violet-400 mt-1">✓</span>
+                                <div>
+                                    <p class="font-mono text-sm text-violet-300">Momentum Strategy</p>
+                                    <p class="text-xs text-slate-400">다중 시간프레임 모멘텀 신호</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-violet-400 mt-1">✓</span>
+                                <div>
+                                    <p class="font-mono text-sm text-violet-300">Mean Reversion Strategy</p>
+                                    <p class="text-xs text-slate-400">평균 회귀 기반 스프레드 거래</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-violet-400 mt-1">✓</span>
+                                <div>
+                                    <p class="font-mono text-sm text-violet-300">Volatility Trading Strategy</p>
+                                    <p class="text-xs text-slate-400">변동성 지수 기반 거래</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-violet-400 mt-1">✓</span>
+                                <div>
+                                    <p class="font-mono text-sm text-violet-300">Carry Trade Strategy</p>
+                                    <p class="text-xs text-slate-400">통화 캐리 전략</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-violet-400 mt-1">✓</span>
+                                <div>
+                                    <p class="font-mono text-sm text-violet-300">Macro Factor Strategy</p>
+                                    <p class="text-xs text-slate-400">거시경제 지표 기반 거래</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                        <h3 class="font-bold text-slate-100 mb-4">품질 관리</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <span class="text-emerald-400 font-mono">87%</span>
+                                <span class="text-slate-300">코드 테스트 커버리지</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-emerald-400 font-mono">17</span>
+                                <span class="text-slate-300">유닛 테스트 케이스</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-emerald-400 font-mono">Git</span>
+                                <span class="text-slate-300">버전 관리 및 CI/CD 통합</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Features -->
+            <section>
+                <h2 class="text-2xl font-bold text-emerald-400 mb-6">핵심 기능</h2>
+                <div class="grid md:grid-cols-2 gap-4 text-slate-300">
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-4">
+                        <p class="font-mono text-sm text-emerald-300 mb-2">데이터 관리</p>
+                        <p className="text-sm">CSV, HDF5, API 연동을 통한 유연한 데이터 로딩</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-4">
+                        <p class="font-mono text-sm text-emerald-300 mb-2">인디케이터 라이브러리</p>
+                        <p className="text-sm">50+ 기술적 지표 및 통계 함수 제공</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-4">
+                        <p class="font-mono text-sm text-emerald-300 mb-2">포트폴리오 최적화</p>
+                        <p className="text-sm">Sharpe Ratio 기반 자동 가중치 최적화</p>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-4">
+                        <p class="font-mono text-sm text-emerald-300 mb-2">리포팅</p>
+                        <p className="text-sm">HTML, CSV 형식의 자동 성과 리포트 생성</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results & Impact -->
+            <section>
+                <h2 class="text-2xl font-bold text-emerald-400 mb-6">개발 성과 & 영향</h2>
+                <div class="space-y-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                        <h3 class="font-bold text-slate-100 mb-4">개발 시간 절감</h3>
+                        <div class="space-y-3 text-slate-300">
+                            <div class="flex justify-between items-center">
+                                <span>새로운 전략 개발 시간</span>
+                                <span class="text-emerald-400 font-mono">2시간 (기존: 1주)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>성과 분석 시간</span>
+                                <span class="text-emerald-400 font-mono">1분 (기존: 30분)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>전략 간 비교 분석</span>
+                                <span class="text-emerald-400 font-mono">즉시 (기존: 수시간)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-lg p-6">
+                        <h3 class="font-bold text-slate-100 mb-4">주요 성과</h3>
+                        <ul class="space-y-2 text-slate-300">
+                            <li class="flex gap-3">
+                                <span class="text-violet-400">✓</span>
+                                <span>5개 전략을 동일한 환경에서 비교 분석 가능</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-violet-400">✓</span>
+                                <span>버그 수정 시 모든 전략에 즉시 반영</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-violet-400">✓</span>
+                                <span>새로운 인디케이터 추가 시 모든 전략에서 재사용 가능</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-violet-400">✓</span>
+                                <span>실시간 거래로 전환 시 코드 수정 최소화</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning & Next Steps -->
+            <section>
+                <h2 class="text-2xl font-bold text-emerald-400 mb-6">배운 점 & 향후 계획</h2>
+                <div class="space-y-4 text-slate-300 leading-relaxed">
+                    <div>
+                        <h3 class="font-bold text-slate-100 mb-2">📚 주요 학습</h3>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>견고한 아키텍처의 중요성 (초기 설계에 시간 투자 가치)</li>
+                            <li>추상화의 적절한 수준 결정 (너무 과도한 추상화 지양)</li>
+                            <li>테스트 주도 개발의 효과</li>
+                            <li>모듈식 설계의 유연성과 유지보수성 향상</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-100 mb-2">🚀 향후 계획</h3>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>실시간 거래(Live Trading) 모듈 통합</li>
+                            <li>클라우드 기반 분산 백테스팅</li>
+                            <li>웹 대시보드 추가 (성과 시각화)</li>
+                            <li>오픈소스 라이브러리로 공개 고려</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-20 pt-12 border-t border-slate-800 flex justify-between items-center">
+            <a href="vxx-term-structure.html" class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition font-mono">
+                <span>←</span> 이전 프로젝트
+            </a>
+            <a href="../index.html" class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition font-mono">
+                프로필로 돌아가기 <span>→</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 mt-20 py-8 px-6">
+        <div class="max-w-6xl mx-auto text-center text-slate-400 text-sm">
+            <p>© 2024 한상혁. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/* 커스텀 스타일 (Tailwind로 충분하지 않은 부분) */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 스크롤바 커스터마이징 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(15, 23, 42);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(51, 65, 85);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(71, 85, 105);
+}
+
+/* 선택 텍스트 스타일 */
+::selection {
+    background-color: rgb(16, 185, 129);
+    color: rgb(15, 23, 42);
+}
